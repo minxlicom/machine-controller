@@ -308,5 +308,10 @@ write_files:
 {{ kubeletHealthCheckSystemdUnit | indent 4 }}
 
 runcmd:
+{{- if .ProviderSpec.PreSetupRunCmd }}
+{{- range .ProviderSpec.PreSetupRunCmd }}
+- "{{ . }}"
+{{- end }}
+{{- end }}
 - systemctl start setup.service
 `

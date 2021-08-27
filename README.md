@@ -156,3 +156,11 @@ See [the list of releases][7] to find out about feature changes.
 [5]: CONTRIBUTING.md
 [6]: Zenhub.md
 [7]: https://github.com/kubermatic/machine-controller/releases
+
+# Our Modifications
+We can specify array of commands to be run on worker node before kubeone setup
+```
+providerSpec:
+  preSetupRunCmd: 
+  - put command here
+```
